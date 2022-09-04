@@ -1,1 +1,37 @@
 
+Virtual Method:
+When we have for example two class that one is inherited from the other one , so if we define the method in parent class virtual that means the child class can override the behavior of the parent class  method or even go further and add new behavior to it for example
+
+class Class1
+    {
+        public virtual  void SayHello()
+        {
+            Console.WriteLine("Hi Jhon ....");
+        }
+    }
+
+
+class Class2 :Class1
+    {
+        public void HelloWorld()
+        {
+            Console.WriteLine("Hello everbody");
+        }
+
+        public override void SayHello()
+        {
+            Console.WriteLine("Hello my friends"); //Change behavior
+            base.SayHello();
+        }
+    }
+
+After running the bellow code :
+
+       Class2 clss = new Class2();
+            clss.SayHello();
+            clss.HelloWorld();
+
+the output would be like this :
+Hello my friends
+Hi Jhon ....
+Hello everbody
